@@ -18,7 +18,7 @@ module.exports = {
     ...Object.fromEntries(
       Object.keys(pkg.peerDependencies || {}).map((dep) => [dep, dep])
     ),
-    'react/jsx-runtime': 'ReactJsxRuntime',
+    'react/jsx-runtime': 'react/jsx-runtime',
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
