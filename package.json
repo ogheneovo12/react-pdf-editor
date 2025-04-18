@@ -1,6 +1,6 @@
 {
   "name": "@xorbcore/react-pdf-editor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/index.js",
   "types": "lib/types/index.d.ts",
   "files": [
