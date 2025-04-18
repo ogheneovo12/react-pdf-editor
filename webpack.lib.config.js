@@ -14,9 +14,12 @@ module.exports = {
     umdNamedDefine: true,
     globalObject: "typeof self !== 'undefined' ? self : this",
   },
-  externals: Object.fromEntries(
-    Object.keys(pkg.peerDependencies || {}).map((dep) => [dep, dep])
-  ),
+  externals: {
+    ...Object.fromEntries(
+      Object.keys(pkg.peerDependencies || {}).map((dep) => [dep, dep])
+    ),
+    'react/jsx-runtime': 'ReactJsxRuntime',
+  },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
     plugins: [
