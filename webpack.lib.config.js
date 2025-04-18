@@ -16,7 +16,7 @@ module.exports = {
   },
   externals: [
     // anything you list as a peerDependency
-    ...Object.keys(pkg.peerDependencies || {}),
+    ...Object.fromEntries(Object.keys(pkg.peerDependencies || {}).map(dep => [dep, dep]))
     // if you had others:
     // { 'classnames': 'classnames' }
   ],
