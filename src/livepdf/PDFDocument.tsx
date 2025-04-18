@@ -3,6 +3,9 @@ import { Document, Page, View, StyleSheet, Font } from "@react-pdf/renderer";
 import { FeatureComponent } from "./livecomponents/editor";
 import { FrontendTypes } from "@/frontend-types";
 import { DefaultValues } from "@/constants";
+
+import regular from "./fonts/FiraSans-Regular.ttf";
+import bold from "./fonts/FiraSans-Bold.ttf";
 export interface PDFDocumentProps {
   machine: FrontendTypes["MachineTemplate"];
   onRender: () => void;
@@ -24,8 +27,8 @@ export const PDFDocument = (props: PDFDocumentProps) => {
                 feature={props.machine.template!.header}
                 hideControls={true}
 
-              //
-              //showTopMenu={true}
+                //
+                //showTopMenu={true}
               />
             )}
           </View>
@@ -44,7 +47,7 @@ export const PDFDocument = (props: PDFDocumentProps) => {
               position: "absolute",
               left: 0,
               right: 0,
-              bottom: 0
+              bottom: 0,
             }}
           >
             {props.machine.template!.footer && (
@@ -61,26 +64,25 @@ export const PDFDocument = (props: PDFDocumentProps) => {
 };
 // Frontend Fonts
 
-
 export const fonts = [
   {
     family: "Fira Sans",
     fonts: [
       {
-        src: require("./fonts/FiraSans-Regular.ttf"),
+        src: regular,
         fontStyle: "normal",
-        fontWeight: "normal"
+        fontWeight: "normal",
       },
       {
-        src: require("./fonts/FiraSans-Bold.ttf"),
+        src: bold,
         fontStyle: "normal",
-        fontWeight: "bold"
-      }
-    ]
-  }
-]
-fonts.forEach(f => Font.register(f));
+        fontWeight: "bold",
+      },
+    ],
+  },
+];
 
+fonts.forEach((font) => Font.register(font));
 
 const styles = StyleSheet.create({
   body: {
@@ -89,32 +91,32 @@ const styles = StyleSheet.create({
     paddingHorizontal: 37,
     letterSpacing: 0,
     fontSize: DefaultValues.fontSize,
-    fontFamily: "Fira Sans"
+    fontFamily: "Fira Sans",
   },
   title: {
-    textAlign: "center"
+    textAlign: "center",
   },
   author: {
     fontSize: 12,
     textAlign: "center",
-    marginBottom: 40
+    marginBottom: 40,
   },
   subtitle: {
     fontSize: 18,
-    margin: 12
+    margin: 12,
   },
   text: {
     margin: 12,
-    textAlign: "justify"
+    textAlign: "justify",
   },
   image: {
     marginVertical: 15,
-    marginHorizontal: 100
+    marginHorizontal: 100,
   },
   header: {
     marginBottom: 20,
     textAlign: "center",
-    color: "grey"
+    color: "grey",
   },
   pageNumber: {
     position: "absolute",
@@ -123,6 +125,6 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     textAlign: "center",
-    color: "grey"
-  }
+    color: "grey",
+  },
 });
