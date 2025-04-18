@@ -14,12 +14,9 @@ module.exports = {
     umdNamedDefine: true,
     globalObject: "typeof self !== 'undefined' ? self : this",
   },
-  externals: [
-    // anything you list as a peerDependency
-    ...Object.fromEntries(Object.keys(pkg.peerDependencies || {}).map(dep => [dep, dep]))
-    // if you had others:
-    // { 'classnames': 'classnames' }
-  ],
+  externals: Object.fromEntries(
+    Object.keys(pkg.peerDependencies || {}).map(dep => [dep, dep])
+  ),
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
     plugins: [
