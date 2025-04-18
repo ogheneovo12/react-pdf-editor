@@ -2,8 +2,7 @@
   "name": "react-pdf-editor",
   "version": "0.0.0",
   "main": "lib/index.js",
-  "module": "lib/index.esm.js",
-  "types": "lib/index.d.ts",
+  "types": "lib/types/index.d.ts",
   "files": [
     "lib"
   ],

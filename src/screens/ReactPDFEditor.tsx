@@ -153,6 +153,7 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
       </div>
       <div className={styles.SplitScreen}>
         <div className={styles.Left}>
+        <h4 className={styles.SectionTitle}>{t("SectionTitleHeader")}</h4>
           <FeatureComponent
             feature={header!}
             onChange={() => mutateWholeObject()}
