@@ -15,7 +15,7 @@ module.exports = {
     globalObject: "typeof self !== 'undefined' ? self : this",
   },
   externals: Object.fromEntries(
-    Object.keys(pkg.peerDependencies || {}).map(dep => [dep, dep])
+    Object.keys(pkg.peerDependencies || {}).map((dep) => [dep, dep])
   ),
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
