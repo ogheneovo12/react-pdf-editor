@@ -1,5 +1,5 @@
 import { style } from "typestyle";
-import { Colors } from "@components/editor/styles/Colors";
+import { Colors } from "@/Colors";
 
 export const Main = style({
   $debugName: "StackMain",
@@ -7,10 +7,10 @@ export const Main = style({
   border: `2px solid ${Colors["Bored Martian"]}`,
   borderTopWidth: 0,
   borderRightWidth: 0,
-  marginBottom: 25
+  marginBottom: 25,
 });
 export const Title = style({
   $debugName: "StackTitle",
   cursor: "pointer",
-  fontWeight: "bold"
+  fontWeight: "bold",
 });

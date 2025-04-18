@@ -16,12 +16,12 @@ export const getString = <T extends keyof typeof Languages>(language: T) => <
   }
   if (!Languages[language][key]) {
     throw new Error(
-      `No such key ${key} in language ${language} - please implement it in models/languages/${language}.ts`
+      `No such key ${String(key)} in language ${language} - please implement it in models/languages/${language}.ts`
     );
   }
   if (!Languages[language][key][value]) {
     throw new Error(
-      `No such value in language ${language} with key ${key} - please implement it in models/languages/${language}.ts`
+      `No such value in language ${language} with key ${String(key)} - please implement it in models/languages/${language}.ts`
     );
   }
   return Languages[language][key][value];

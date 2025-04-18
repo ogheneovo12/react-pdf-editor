@@ -40,7 +40,12 @@ module.exports = {
       },
       {
         test: /\.tsx?$/,
-        loader: "ts-loader"
+        loader: "ts-loader",
+        options: {
+          transpileOnly: true,
+          configFile: path.resolve(__dirname, "tsconfig.json"),
+        },
+        exclude: /node_modules/,
       },
       { test: /\.(png|svg)$/, use: "url-loader?limit=10000" },
       { test: /\.(jpg|gif)$/, use: "file-loader" },
